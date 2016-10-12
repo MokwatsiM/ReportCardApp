@@ -1,7 +1,9 @@
 package com.ekasilab.reportscard;
 
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -77,10 +79,19 @@ public class LearnerDetails extends AppCompatActivity implements View.OnClickLis
         if (v.getId() == R.id.Delete) {
             learner = db.getLearner(txtName.getText().toString());
             db.deleteLearner(learner);
+            new AlertDialog.Builder(this).setTitle("Delete Learner")
+                    .setMessage("Are you sure You want to delete this learners details").setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
 
-            finish();
-            Intent in = new Intent(LearnerDetails.this, OptionsActivity.class);
-            startActivity(in);
+                    finish();
+                    Intent in = new Intent(LearnerDetails.this, OptionsActivity.class);
+                    startActivity(in);
+
+                }
+            })
+                    .setNegativeButton("No", null).show();
+
         } else if (v.getId() == R.id.updateSt) {
             learner = db.getLearner(txtName.getText().toString());
             Intent in = new Intent(LearnerDetails.this, UpdateActivity.class);
