@@ -5,7 +5,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/imag">
 
     <LinearLayout
         android:id="@+id/activity_learner_details"
@@ -223,6 +224,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_weight="0"
                 android:paddingTop="16dp"
+                android:paddingBottom="16dp"
                 android:text="Delete Student" />
 
             <Button
@@ -230,6 +232,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:paddingTop="16dp"
+                android:paddingBottom="16dp"
                 android:id="@+id/updateSt"
                 android:text="Update Student" />
         </LinearLayout>
