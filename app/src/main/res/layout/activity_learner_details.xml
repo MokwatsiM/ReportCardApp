@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/imag">
+    android:background="@drawable/newpic">
 
     <LinearLayout
         android:id="@+id/activity_learner_details"
@@ -43,7 +43,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="16dp"
             android:textAppearance="?android:textAppearanceLarge"
-            android:textColor="#ff9f23"
+            android:textColor="#ff0000"
             android:textStyle="bold" />
 
         <TextView
@@ -63,7 +63,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="16dp"
             android:textAppearance="?android:textAppearanceLarge"
-            android:textColor="#ff9f23"
+            android:textColor="#ff0000"
             android:textStyle="bold" />
 
         <TextView
@@ -83,7 +83,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="16dp"
             android:textAppearance="?android:textAppearanceLarge"
-            android:textColor="#ff9f23"
+            android:textColor="#ff0000"
             android:textStyle="bold" />
 
         <TextView
@@ -104,7 +104,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="16dp"
             android:textAppearance="?android:textAppearanceLarge"
-            android:textColor="#ff9f23"
+            android:textColor="#ff0000"
             android:textStyle="bold" />
 
 
@@ -125,7 +125,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="16dp"
             android:textAppearance="?android:textAppearanceLarge"
-            android:textColor="#ff9f23"
+            android:textColor="#ff0000"
             android:textStyle="bold" />
 
         <TextView
@@ -145,7 +145,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="16dp"
             android:textAppearance="?android:textAppearanceLarge"
-            android:textColor="#ff9f23"
+            android:textColor="#ff0000"
             android:textStyle="bold" />
 
         <TextView
@@ -166,7 +166,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="16dp"
             android:textAppearance="?android:textAppearanceLarge"
-            android:textColor="#ff9f23"
+            android:textColor="#ff0000"
             android:textStyle="bold" />
 
         <TextView
@@ -187,7 +187,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="16dp"
             android:textAppearance="?android:textAppearanceLarge"
-            android:textColor="#ff9f23"
+            android:textColor="#ff0000"
             android:textStyle="bold" />
 
         <TextView
@@ -207,7 +207,26 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="16dp"
             android:textAppearance="?android:textAppearanceLarge"
-            android:textColor="#ff9f23"
+            android:textColor="#ff0000"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:text="Symbol"
+            android:textAppearance="?android:textAppearanceLarge"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/showResults"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+
+            android:textAppearance="?android:textAppearanceLarge"
+            android:textColor="#ff0000"
             android:textStyle="bold" />
 
 
@@ -223,17 +242,17 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_weight="0"
-                android:paddingTop="16dp"
                 android:paddingBottom="16dp"
+                android:paddingTop="16dp"
                 android:text="Delete Student" />
 
             <Button
+                android:id="@+id/updateSt"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:paddingTop="16dp"
                 android:paddingBottom="16dp"
-                android:id="@+id/updateSt"
+                android:paddingTop="16dp"
                 android:text="Update Student" />
         </LinearLayout>
     </LinearLayout>

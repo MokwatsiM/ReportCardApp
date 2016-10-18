@@ -20,7 +20,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     //All static variables
     //Database Version
-    private static final int DATABASE_VERSION = 3;
+    private static final int DATABASE_VERSION = 4;
 
     //Database name
     private static final String DATABASE_NAME = "LEARNERDB";
@@ -49,7 +49,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
 
-        onUpgrade(db, 1, DATABASE_VERSION);
+ //      onUpgrade(db, 1, DATABASE_VERSION);
         String createTable = "CREATE TABLE " + LEARNER_TABLE + "("
                 + STUDENT_NO + " INTEGER PRIMARY KEY AUTOINCREMENT," + STUDENT_NAME + " TEXT,"
                 + STUDENT_SURNAME + " TEXT," + ADDRESS + " TEXT,"
@@ -100,16 +100,16 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         try {
             SQLiteDatabase db = this.getReadableDatabase();
             Cursor cursor = db.query(LEARNER_TABLE, new String[]{STUDENT_NO, STUDENT_NAME, STUDENT_SURNAME
-                    , ADDRESS, SUBJECT_NAME, NO_OF_SUBJECT, TEST1, TEST2, TEST3}, STUDENT_NAME + " =?", new String[]
-                    {String.valueOf(name)}, null, null, null, null);
+                    , ADDRESS, SUBJECT_NAME, TEST1, TEST2, TEST3}, STUDENT_NAME + " like? ", new String[]
+                    {name}, null, null, null, null);
             if (cursor != null) {
                 cursor.moveToFirst();
             }
 
             LearnerReport learner = new LearnerReport(Integer.parseInt(cursor.getString(0)), cursor.getString(1),
                     cursor.getString(2), cursor.getString(3), cursor.getString(4),
-                    Double.parseDouble(cursor.getString(6)),
-                    Double.parseDouble(cursor.getString(7)), Double.parseDouble(cursor.getString(8)));
+                    Double.parseDouble(cursor.getString(5)),
+                    Double.parseDouble(cursor.getString(6)), Double.parseDouble(cursor.getString(7)));
             return learner;
         } catch (SQLiteException ex) {
             throw new SQLiteException("Error while retrieving data\n" + ex.getMessage());
@@ -137,17 +137,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 LearnerReport learner;
                 learner = new LearnerReport(Integer.parseInt(cursor.getString(0)), cursor.getString(1),
                         (cursor.getString(2)), cursor.getString(3), cursor.getString(4),
-
-                        Double.parseDouble(cursor.getString(6)),
-                        Double.parseDouble(cursor.getString(7)), Double.parseDouble(cursor.getString(8)));
-//                learner.setName();
-//                learner.setSurname();
-//                learner.setLearnerAddress();
-//                learner.setSubjectName();
-//                learner.setNoOfSubjects();
-//                learner.setTest1();
-//                learner.setTest2();
-//                learner.setTest3();
+                        Double.parseDouble(cursor.getString(5)),
+                        Double.parseDouble(cursor.getString(6)), Double.parseDouble(cursor.getString(7)));
                 learnerList.add(learner);
 
             } while (cursor.moveToNext());

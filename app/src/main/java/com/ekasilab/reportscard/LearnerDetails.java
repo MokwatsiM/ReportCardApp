@@ -15,10 +15,11 @@ import android.widget.TextView;
 
 public class LearnerDetails extends AppCompatActivity implements View.OnClickListener {
 
-    private TextView txtName, txtSurname, txtStudentNo, txtAddress, txtSubjectName, txtTest1, txtTest2, txtTest3, txtSubjectPercentage;
+    private TextView txtName, txtSurname, txtStudentNo, txtAddress, txtSubjectName, txtTest1, txtTest2, txtTest3, txtSubjectPercentage, txtSymbol;
     private Button btnDelete, btnUpdate;
     LearnerReport learner;
     DatabaseHandler db = new DatabaseHandler(this);
+    double yearMark;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +27,7 @@ public class LearnerDetails extends AppCompatActivity implements View.OnClickLis
         setContentView(R.layout.activity_learner_details);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        double yearMark;
+
         txtName = (TextView) findViewById(R.id.name);
         txtStudentNo = (TextView) findViewById(R.id.studentNo);
         txtSurname = (TextView) findViewById(R.id.studentSurname);
@@ -35,6 +36,7 @@ public class LearnerDetails extends AppCompatActivity implements View.OnClickLis
         txtTest1 = (TextView) findViewById(R.id.studentTest1);
         txtTest2 = (TextView) findViewById(R.id.studentTest2);
         txtTest3 = (TextView) findViewById(R.id.studentTest3);
+        txtSymbol = (TextView) findViewById(R.id.showResults);
         txtSubjectPercentage = (TextView) findViewById(R.id.SubjectMark);
 
 
@@ -51,6 +53,14 @@ public class LearnerDetails extends AppCompatActivity implements View.OnClickLis
         txtTest3.setText(String.format("" + learner.getTest3()));
         yearMark = learner.calcSubjectMark(Double.parseDouble(txtTest1.getText().toString()), Double.parseDouble(txtTest2.getText().toString()), Double.parseDouble(txtTest3.getText().toString()));
         txtSubjectPercentage.setText(String.format("" + yearMark));
+        if (yearMark >= 75 && yearMark<=100) {
+            txtSymbol.setText("Pass with Distinction");
+        } else if (yearMark >= 50 && yearMark<75) {
+            txtSymbol.setText("Pass");
+        } else {
+            txtSymbol.setText("Failed");
+        }
+
 
         btnDelete.setOnClickListener(this);
         btnUpdate.setOnClickListener(this);
@@ -105,5 +115,12 @@ public class LearnerDetails extends AppCompatActivity implements View.OnClickLis
     @Override
     public void onResume() {
         super.onResume();
+        if (yearMark >= 75 && yearMark<=100) {
+            txtSymbol.setText("Pass with Distinction");
+        } else if (yearMark >= 50 && yearMark<75) {
+            txtSymbol.setText("Pass");
+        } else {
+            txtSymbol.setText("Failed");
+        }
     }
 }

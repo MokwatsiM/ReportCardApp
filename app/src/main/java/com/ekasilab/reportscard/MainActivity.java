@@ -19,6 +19,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if(txtUsername.getText().toString().equalsIgnoreCase("poison")&& pass==12345)
         {
             startActivity(new Intent(this,OptionsActivity.class));
+            txtPassword.setText("");
+            txtUsername.setText("");
         }else
         {
             Toast.makeText(this,"Wrong credentials",Toast.LENGTH_LONG).show();
