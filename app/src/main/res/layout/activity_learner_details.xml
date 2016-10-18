@@ -239,7 +239,7 @@
             <Button
                 android:id="@+id/Delete"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_gravity="center_horizontal"
                 android:layout_weight="0"
                 android:paddingBottom="16dp"
@@ -253,6 +253,7 @@
                 android:layout_weight="1"
                 android:paddingBottom="16dp"
                 android:paddingTop="16dp"
+
                 android:text="Update Student" />
         </LinearLayout>
     </LinearLayout>
