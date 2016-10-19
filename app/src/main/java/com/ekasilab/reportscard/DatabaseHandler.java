@@ -36,7 +36,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     private static final String ADDRESS = "ADDRESS";
     private static final String SUBJECT_NAME = "SUBJECT_NAME";
 
-    private static final String NO_OF_SUBJECT = "NO_OF_SUBJECT";
+
     private static final String TEST1 = "TEST1";
     private static final String TEST2 = "TEST2";
     private static final String TEST3 = "TEST3";

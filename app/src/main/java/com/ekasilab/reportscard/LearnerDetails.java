@@ -27,7 +27,7 @@ public class LearnerDetails extends AppCompatActivity implements View.OnClickLis
         setContentView(R.layout.activity_learner_details);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
+setTitle("Student Details");
         txtName = (TextView) findViewById(R.id.name);
         txtStudentNo = (TextView) findViewById(R.id.studentNo);
         txtSurname = (TextView) findViewById(R.id.studentSurname);

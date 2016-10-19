@@ -11,21 +11,20 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.ekasilab.reportscard.MainActivity">
 
-    <TextView
+
+
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="10dp"
-        android:text="Student Report "
-        android:textAppearance="?android:textAppearanceLarge"
-        android:textStyle="bold" />
+        android:src="@drawable/repo"
+        android:layout_gravity="center_horizontal"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="30dp"
-        android:hint="Lecture UserName"
+        android:hint="User Name"
         android:id="@+id/username"
         android:inputType="textCapSentences"
         android:layout_marginLeft="40dp"
@@ -37,7 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="30dp"
-        android:hint="Lecture Password"
+        android:hint="Password"
         android:id="@+id/password"
         android:inputType="numberPassword"
         android:layout_marginLeft="40dp"

@@ -36,6 +36,7 @@ public class ShowLearners extends AppCompatActivity implements AdapterView.OnIte
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        setTitle("Students");
         DatabaseHandler myDatabase = new DatabaseHandler(ShowLearners.this);
         learnerList = myDatabase.getAllLearner();
         searchStd = (android.widget.SearchView) findViewById(R.id.searchStudent);
@@ -46,7 +47,7 @@ public class ShowLearners extends AppCompatActivity implements AdapterView.OnIte
             nameList.add(temp.getName());
 
         }
-        listAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, nameList);
+        listAdapter = new ArrayAdapter<>(this, R.layout.text, nameList);
 
 
         list = (ListView) findViewById(R.id.listLearners);

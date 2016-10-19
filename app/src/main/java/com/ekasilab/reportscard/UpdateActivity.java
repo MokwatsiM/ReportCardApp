@@ -36,6 +36,7 @@ public class UpdateActivity extends AppCompatActivity implements View.OnClickLis
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        setTitle("Update Student");
         txtAddress = (EditText) findViewById(R.id.updateAddress);
         txtSurname = (EditText) findViewById(R.id.updateSurname);
         txtName = (EditText) findViewById(R.id.updateName);

@@ -27,6 +27,8 @@ public class RegisterStudentDetails extends AppCompatActivity implements View.On
         setContentView(R.layout.activity_register_student_details);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        setTitle("Register Student");
         txtAddress = (EditText) findViewById(R.id.address);
         txtSurname = (EditText) findViewById(R.id.surname);
         txtName = (EditText) findViewById(R.id.studentname);

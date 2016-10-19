@@ -17,8 +17,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        int pass = Integer.parseInt(txtPassword.getText().toString());
-        if (txtUsername.getText().toString().equalsIgnoreCase("poison") && pass == 12345) {
+
+        if (txtUsername.getText().toString().equalsIgnoreCase("poison") && txtPassword.getText().toString().equalsIgnoreCase("12345")) {
+
             startActivity(new Intent(this, OptionsActivity.class));
             txtPassword.setText("");
             txtUsername.setText("");
@@ -39,6 +40,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         txtUsername = (EditText) findViewById(R.id.username);
 
         btnSignIn = (Button) findViewById(R.id.sign_in);
+btnSignIn.setAllCaps(true);
 
         btnSignIn.setOnClickListener(this);
 
