@@ -44,7 +44,7 @@ public class ShowLearners extends AppCompatActivity implements AdapterView.OnIte
 
         for (int i = 0; i < learnerList.size(); i++) {
             LearnerReport temp = learnerList.get(i);
-            nameList.add(temp.getName());
+            nameList.add(temp.getName()+" "+temp.getSurname());
 
         }
         listAdapter = new ArrayAdapter<>(this, R.layout.text, nameList);
@@ -62,13 +62,12 @@ public class ShowLearners extends AppCompatActivity implements AdapterView.OnIte
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-//
-//        if (learner == null) {
-//            Toast.makeText(ShowLearners.this, "No learner wwas found", Toast.LENGTH_LONG).show();
-//        } else {
-        String selectedName = listAdapter.getItem(position);
 
-        learner = db.getLearner(selectedName);
+        String selectedName = listAdapter.getItem(position);
+      int space=  selectedName.indexOf(" ");
+    String firstName =    selectedName.substring(0,space);
+
+        learner = db.getLearner(firstName);
         Intent in = new Intent(ShowLearners.this, LearnerDetails.class);
         in.putExtra("learner", learner);
         startActivity(in);
@@ -110,16 +109,14 @@ public class ShowLearners extends AppCompatActivity implements AdapterView.OnIte
 
     @Override
     public boolean onQueryTextSubmit(String query) {
-        int count=0;
-try {
-    learner = db.getLearner(query);
-    count = db.getLearnerCounts();
-}catch(Exception ex)
-{
-    Toast.makeText(ShowLearners.this, "Error!! \n"+ex.getMessage(), Toast.LENGTH_LONG).show();
-}
+        int count = 0;
+        try {
+            learner = db.getLearner(query);
+            count = db.getLearnerCounts();
+        } catch (Exception ex) {
+        }
 
-        if (count<1) {
+        if (count < 1) {
             Toast.makeText(ShowLearners.this, query + " Sorry was not found or does not exist!!", Toast.LENGTH_LONG).show();
             return false;
         } else {

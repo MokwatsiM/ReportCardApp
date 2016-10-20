@@ -233,6 +233,7 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
             android:orientation="horizontal">
 
 
@@ -243,6 +244,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_weight="0"
                 android:paddingBottom="16dp"
+
                 android:paddingTop="16dp"
                 android:text="Delete Student" />
 

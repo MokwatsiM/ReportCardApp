@@ -3,26 +3,34 @@
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@drawable/newpic"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/newpic"
     android:orientation="vertical"
     tools:context="com.ekasilab.reportscard.ShowLearners">
-<SearchView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:queryHint="Search Student"
-    android:id="@+id/searchStudent"
-    >
 
-</SearchView>
+    <SearchView
+        android:id="@+id/searchStudent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:queryHint="Search Student">
 
-    <ListView
-        android:id="@+id/listLearners"
+    </SearchView>
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="match_parent">
 
-        android:layout_centerHorizontal="true">
 
-    </ListView>
+        <ListView
+            android:id="@+id/listLearners"
+            style="?android:textAppearanceLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_centerHorizontal="true">
+
+
+        </ListView>
+    </RelativeLayout>
 </LinearLayout>

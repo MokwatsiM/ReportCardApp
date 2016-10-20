@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     android:textSize="22sp"
     android:textStyle="bold"
+    android:textAppearance="?android:textAppearanceLarge"
 
     >
 
