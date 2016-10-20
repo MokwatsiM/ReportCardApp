@@ -76,9 +76,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
 
-//        String in = "insert into learner values("+learner.getStdNo()+","+learner.getName()+","+learner.getSurname()+","+learner.getLearnerAddress()+","+learner.getSubjectName()+","+
-//                learner.getNoOfSubjects()+","+learner.getTest1()+","+learner.getTest2()+","+learner.getTest3()+")";
-
         values.put(STUDENT_NAME, learner.getName());
         values.put(STUDENT_SURNAME, learner.getSurname());
         values.put(ADDRESS, learner.getLearnerAddress());
